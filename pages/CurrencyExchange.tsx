@@ -12,7 +12,7 @@ import {
     fetchExchangeRate,
     fetchPhysicalCurrencies,
     fetchDigitalCurrencies,
-} from "./api/apiService";
+} from "../api/apiService.ts";
 
 const CurrencyExchange: React.FC = () => {
     const [amount, setAmount] = useState<number>(1);

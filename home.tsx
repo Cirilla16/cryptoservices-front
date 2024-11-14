@@ -26,38 +26,45 @@ function Home() {
     // const [count, setCount] = useState<number>(0)
 
     return (
-        <>
+        <div style={{width:"100%"}}>
             <CssBaseline enableColorScheme/>
-            <AppAppBar/>
-            <Outlet/>
-            {/*<Container*/}
-            {/*    maxWidth="lg"*/}
-            {/*    component="main"*/}
-            {/*    sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}*/}
-            {/*>*/}
-            {/*    <div>*/}
-            {/*        <a href="https://vite.dev" target="_blank">*/}
-            {/*            <img src={viteLogo} className="logo" alt="Vite logo"/>*/}
-            {/*        </a>*/}
-            {/*        <a href="https://react.dev" target="_blank">*/}
-            {/*            <img src={reactLogo} className="logo react" alt="React logo"/>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
-            {/*    <h1>Vite + React</h1>*/}
-            {/*    <div className="card">*/}
-            {/*        <Button variant="contained" onClick={() => setCount((count) => count + 1)}>count is {count}</Button>;*/}
-            {/*        <p>*/}
-            {/*            Edit <code>src/App.tsx</code> and save to test HMR*/}
-            {/*        </p>*/}
-            {/*    </div>*/}
-            {/*    <p className="read-the-docs">*/}
-            {/*        Click on the Vite and React logos to learn more*/}
-            {/*    </p>*/}
-                <Copyright/>
-            {/*</Container>*/}
-            {/*<Footer/>*/}
 
-        </>
+            Store. Gift magic this holiday.
+
+            Need shopping help?
+            Ask a Specialist (Opens in a new window)
+            Visit an Apple Store
+            Find one near youVisit an Apple Store(opens in a new window)
+
+            Mac
+
+            iPhone
+
+            iPad
+
+            Apple Watch
+
+            Apple Vision Pro
+
+            AirPods
+
+            AirTag
+
+            Apple TV 4K
+
+            HomePod
+
+            Accessories
+
+            Apple Gift Card
+
+            <AppAppBar />
+            <div style={{width:"100%"}}>
+                <Outlet/>
+            </div>
+
+            <Copyright/>
+        </div>
     )
 }
 

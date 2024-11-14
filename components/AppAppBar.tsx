@@ -25,7 +25,6 @@ export default function AppAppBar() {
 
   return (
     <AppBar
-      position="fixed"
       enableColorOnDark
       sx={{
         boxShadow: 0,
@@ -47,7 +46,7 @@ export default function AppAppBar() {
                 <Link to="/crypto-data">Historical data</Link>
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                Blog
+                <Link to="/blog">Blog</Link>
               </Button>
             </Box>
           </Box>

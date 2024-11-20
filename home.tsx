@@ -26,43 +26,10 @@ function Home() {
     // const [count, setCount] = useState<number>(0)
 
     return (
-        <div style={{width:"100%"}}>
+        <div >
             <CssBaseline enableColorScheme/>
-
-            Store. Gift magic this holiday.
-
-            Need shopping help?
-            Ask a Specialist (Opens in a new window)
-            Visit an Apple Store
-            Find one near youVisit an Apple Store(opens in a new window)
-
-            Mac
-
-            iPhone
-
-            iPad
-
-            Apple Watch
-
-            Apple Vision Pro
-
-            AirPods
-
-            AirTag
-
-            Apple TV 4K
-
-            HomePod
-
-            Accessories
-
-            Apple Gift Card
-
-            <AppAppBar />
-            <div style={{width:"100%"}}>
-                <Outlet/>
-            </div>
-
+            <AppAppBar/>
+            <Outlet/>
             <Copyright/>
         </div>
     )

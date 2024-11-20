@@ -43,7 +43,7 @@ export default function AppAppBar() {
                 <Link to="/exchange-rate">Currency Exchange Rate</Link>
               </Button>
               <Button variant="text" color="info" size="small">
-                <Link to="/crypto-data">Historical data</Link>
+                <Link to="/cryptocurrencies-historical-data">Historical data</Link>
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                 <Link to="/blog">Blog</Link>
@@ -91,7 +91,11 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
                 <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
+                <MenuItem>
+                  Historical Data
+                  <Button variant="text" color="info" size="small">
+                  <Link to="/cryptocurrencies-historical-data">Historical data</Link>
+                </Button></MenuItem>
                 <MenuItem>Highlights</MenuItem>
                 <MenuItem>Pricing</MenuItem>
                 <MenuItem>FAQ</MenuItem>

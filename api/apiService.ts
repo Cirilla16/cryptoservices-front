@@ -1,4 +1,5 @@
 import axios from "axios";
+import {Dayjs} from "dayjs";
 
 // const host ="host.docker.internal"
 const host =""
@@ -62,11 +63,59 @@ export const fetchExchangeRate = async (
         if (isNaN(rate)) {
             throw new Error("Invalid exchange rate received from API.");
         }
-
         return rate;
     } catch (error) {
         console.error("Error fetching exchange rate:", error);
         throw new Error("Failed to fetch exchange rate. Please try again.");
+    }
+};
+
+interface DailyCryptoDataResponse {
+    err_code: number;
+    message: string;
+    total: number | null;
+    data:Record<string, { [key: string]: string }>;
+}
+export const getCryptocurrencyData = async (
+    timeSpan: string,
+    fromSymbol: string,
+    toSymbol: string,
+    startDate: Dayjs,
+    endDate: Dayjs
+): Promise<Record<string, { [key: string]: string }>> => {
+    try {
+        // Convert Date objects to ISO strings
+        const startDateString = startDate.format("YYYY-MM-DD");
+        const endDateString = endDate.format("YYYY-MM-DD");
+        let path=`${module_prefix}/fx-daily`
+        if (timeSpan === "day") {
+            path = `${module_prefix}/fx-daily`
+        }else if (timeSpan === "week") {
+            path = `${module_prefix}/fx-weekly`
+        }else if (timeSpan === "month") {
+            path = `${module_prefix}/fx-monthly`
+        }
+        const response = await axios.get<DailyCryptoDataResponse>(path, {
+            params: {
+                from_symbol: fromSymbol,
+                to_symbol: toSymbol,
+                start_date: startDateString,
+                end_date: endDateString,
+            },
+        });
+        console.log(response.data)
+        // Check for API errors
+        if (response.data.err_code !== 0) {
+            throw new Error(
+                `API Error: ${response.data.message} (err_code: ${response.data.err_code})`
+            );
+        }
+
+        // Return the `data` object containing the time series
+        return response.data.data;
+    } catch (error) {
+        console.error('Error fetching cryptocurrency data:', error);
+        throw error; // Re-throw the error for further handling
     }
 };
 

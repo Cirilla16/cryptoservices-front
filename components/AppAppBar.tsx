@@ -90,27 +90,27 @@ export default function AppAppBar() {
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <MenuItem>Features</MenuItem>
                 <MenuItem>
-                  Historical Data
                   <Button variant="text" color="info" size="small">
-                  <Link to="/cryptocurrencies-historical-data">Historical data</Link>
-                </Button></MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
+                    <Link to="/exchange-rate">Currency Exchange Rate</Link>
+                  </Button>
+                </MenuItem>
+                <MenuItem>
+                  <Button variant="text" color="info" size="small">
+                    <Link to="/cryptocurrencies-historical-data">Historical data</Link>
+                  </Button>
+                </MenuItem>
                 <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
+                {/*<MenuItem>*/}
+                {/*  <Button color="primary" variant="contained" fullWidth>*/}
+                {/*    Sign up*/}
+                {/*  </Button>*/}
+                {/*</MenuItem>*/}
+                {/*<MenuItem>*/}
+                {/*  <Button color="primary" variant="outlined" fullWidth>*/}
+                {/*    Sign in*/}
+                {/*  </Button>*/}
+                {/*</MenuItem>*/}
               </Box>
             </Drawer>
           </Box>

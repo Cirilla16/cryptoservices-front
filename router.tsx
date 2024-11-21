@@ -1,8 +1,8 @@
 import {Routes, Route} from "react-router-dom";
-import Home from "./home.tsx";
+import Home from "./pages/home.tsx";
 import CurrencyExchange from "./pages/CurrencyExchange.tsx";
 import LineGraph from "./pages/LineGraph.tsx";
-import Blog from "./Blog.tsx";
+import Blog from "./pages/Blog.tsx";
 import Simple from "./pages/Simple.tsx";
 
 function Router() {

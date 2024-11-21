@@ -4,7 +4,7 @@
 // import Button from '@mui/material/Button';
 import {Link, Typography} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-import AppAppBar from "./components/AppAppBar.tsx";
+import AppAppBar from "../components/AppAppBar.tsx";
 // import Container from "@mui/material/Container";
 import {Outlet} from "react-router-dom";
 function Copyright() {

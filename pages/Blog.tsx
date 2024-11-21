@@ -1,9 +1,9 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import AppAppBar from './components/AppAppBar';
-import MainContent from './components/MainContent';
-import Latest from './components/Latest';
-import Footer from './components/Footer';
+import AppAppBar from '../components/AppAppBar.tsx';
+import MainContent from '../components/MainContent.tsx';
+import Latest from '../components/Latest.tsx';
+import Footer from '../components/Footer.tsx';
 
 export default function Blog() {
     return (

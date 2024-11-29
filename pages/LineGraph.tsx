@@ -1,19 +1,17 @@
 import React, {useState} from "react";
 import dayjs, {Dayjs} from 'dayjs';
 import {Typography, Paper, Select, SelectChangeEvent} from "@mui/material";
-import {crypto_daily_data} from "../api/fake_data.ts";
 import CurrencySelection from "../components/CurrencySelection.tsx";
 import CurrencyLineGraph from "../components/CurrencyLineGraph.tsx";
 import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
-interface DigitalCurrencyData {
-    "Meta Data": Record<string, string>;
-    "Time Series (Digital Currency Daily)": Record<string, { [key: string]: string }>;
-}
+// interface DigitalCurrencyData {
+//     "Meta Data": Record<string, string>;
+//     "Time Series (Digital Currency Daily)": Record<string, { [key: string]: string }>;
+// }
 
-const data: DigitalCurrencyData = crypto_daily_data
 
 const LineGraph: React.FC = () => {
     const [digitalCurrency, setDigitalCurrency] = useState<string>("EUR");
@@ -39,7 +37,8 @@ const LineGraph: React.FC = () => {
 
             </div>
             <Typography variant="h5" gutterBottom>
-                {data["Meta Data"]["3. Digital Currency Name"]} Price Chart
+                {/*{data["Meta Data"]["3. Digital Currency Name"]} Price Chart*/}
+                {digitalCurrency}-{physicalCurrencies} Price Chart
             </Typography>
             <Select
                 labelId="Time Span"
@@ -54,8 +53,8 @@ const LineGraph: React.FC = () => {
                     </MenuItem>
                 ))}
             </Select>
-            <CurrencySelection currency_type={0} onCurrencySelect={handleDigitalCurrencySelect}/>
-            <CurrencySelection currency_type={1} onCurrencySelect={handlePhysicalCurrencySelect}/>
+            <CurrencySelection currency_type={0} default_value="EUR" onCurrencySelect={handleDigitalCurrencySelect}/>
+            <CurrencySelection currency_type={1} default_value="USD" onCurrencySelect={handlePhysicalCurrencySelect}/>
             <Divider  />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
@@ -69,6 +68,7 @@ const LineGraph: React.FC = () => {
                     onChange={(newValue) => setEndDate(newValue)}
                 />
             </LocalizationProvider>
+
             <CurrencyLineGraph time_span={timeSpan} from_currency={digitalCurrency} to_currency={physicalCurrencies} start_date={startDate} end_date={endDate}/>
         </Paper>
     );

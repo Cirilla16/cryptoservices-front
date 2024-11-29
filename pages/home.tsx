@@ -15,8 +15,8 @@ function Copyright() {
 
         >
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
+            <Link color="inherit" href="https://www.csd.uwo.ca/people/faculty/bios/madhavji.html">
+                Our Website
             </Link>{' '}
             {new Date().getFullYear()}.
         </Typography>

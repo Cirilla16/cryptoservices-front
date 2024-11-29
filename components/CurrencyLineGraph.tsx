@@ -3,6 +3,7 @@ import ReactECharts from "echarts-for-react";
 import {Box, Select, MenuItem, Typography, Paper, FormControl, InputLabel, CircularProgress} from "@mui/material";
 import {getCryptocurrencyData} from "../api/apiService.ts";
 import {Dayjs} from "dayjs";
+import Divider from "@mui/material/Divider";
 
 
 
@@ -123,12 +124,7 @@ const CurrencyLineGraph: React.FC<CurrencyLineGraphProps> = ({time_span,from_cur
     };
 
     return (
-        <Paper elevation={3} sx={{padding: 30}}>
-
-
-            <Typography variant="h5" gutterBottom>
-                {from_currency}-{to_currency} Price Chart
-            </Typography>
+        <Paper elevation={3} sx={{padding: 3}}>
             <Box>
                 <FormControl fullWidth>
                     <InputLabel id="price-type-label">Price Type</InputLabel>
@@ -145,6 +141,7 @@ const CurrencyLineGraph: React.FC<CurrencyLineGraphProps> = ({time_span,from_cur
                     </Select>
                 </FormControl>
                 <div style={{width: "100vw"}}></div>
+                <Divider/>
                 <ReactECharts key={priceType} option={options}/>
             </Box>
         </Paper>

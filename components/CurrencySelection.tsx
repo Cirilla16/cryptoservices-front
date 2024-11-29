@@ -4,9 +4,10 @@ import {Autocomplete, Box, TextField, Typography} from "@mui/material";
 
 interface CurrencySelectionProps {
   currency_type: number; // 0 digital,1 physical, 2 all
+    default_value:string;
   onCurrencySelect: (selectedCurrency: string) => void;
 }
-const CurrencySelection:React.FC<CurrencySelectionProps> = ({currency_type,onCurrencySelect }) => {
+const CurrencySelection:React.FC<CurrencySelectionProps> = ({currency_type,default_value,onCurrencySelect }) => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>("");
   const [physicalCurrencies, setPhysicalCurrencies] = useState<
       { code: string; name: string }[]
@@ -51,6 +52,7 @@ const CurrencySelection:React.FC<CurrencySelectionProps> = ({currency_type,onCur
     setSelectedCurrency(selectedCode);
     onCurrencySelect(selectedCode); // Call the parent handler
   };
+  console.log(label)
   return (
 
         <Box display="flex" flexDirection="column" gap={2}>
@@ -65,7 +67,7 @@ const CurrencySelection:React.FC<CurrencySelectionProps> = ({currency_type,onCur
               renderInput={(params) => (
                   <TextField
                       {...params}
-                      label={label}
+                      label={default_value}
                       fullWidth
                   />
               )}

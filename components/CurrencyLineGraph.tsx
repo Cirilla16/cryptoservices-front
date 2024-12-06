@@ -91,7 +91,7 @@ const CurrencyLineGraph: React.FC<CurrencyLineGraphProps> = ({time_span,from_cur
     // ECharts configuration
     const options = {
         title: {
-            text: `Daily Prices of ${from_currency} to ${to_currency}`,
+            text: `${time_span} Prices of ${from_currency} to ${to_currency}`,
             left: "center",
         },
         tooltip: {

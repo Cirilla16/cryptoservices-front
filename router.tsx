@@ -2,8 +2,6 @@ import {Routes, Route} from "react-router-dom";
 import Home from "./pages/home.tsx";
 import CurrencyExchange from "./pages/CurrencyExchange.tsx";
 import LineGraph from "./pages/LineGraph.tsx";
-// import Blog from "./pages/Blog.tsx";
-import Simple from "./pages/Simple.tsx";
 
 function Router() {
     return (
@@ -14,7 +12,6 @@ function Router() {
                 <Route path="/cryptocurrencies-historical-data" element={<LineGraph />} />
                 <Route path="*" element={<CurrencyExchange />} />
             </Route>
-            <Route path="/s" element={<Simple />} />
         </Routes>
     );
 }
